@@ -1,33 +1,29 @@
-body {
-    background-image: url(image\background_of_happy_new_year.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    color: whitesmoke;
-    height: 100vh;
-    justify-content: center;
-    text-align: center;
-}
+// Set the date we're counting down to
+var daysCount = new Date("dec 31, 2022 00:00:00").getTime();
 
-h1 {
-    font-size: 50px;
-    word-spacing: 100px;
-    font-family: 'Courier New', Courier, monospace;
-}
 
-h2 {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 60px;
-}
+// Update the count down every 1 second
+var count = setInterval(function() {
 
-.contaneir {
-    text-align: center;
-    font-size: 20px;
-    margin-top: 5%;
-}
+    // Get today's date and time
+    var now = new Date().getTime();
 
-span {
-    word-spacing: 140px;
-    margin-left: 50px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
+    // Find the distance between now and the count down date
+    var time = daysCount - now;
+
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(time / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((time % (1000 * 60)) / 1000);
+
+    // Output the result in an element with id="demo"
+    document.getElementById("Time-diplay").innerHTML = days + " " + hours + " " +
+        minutes + " " + seconds + " ";
+
+    // If the count down is over, write some text 
+    if (time < 0) {
+        clearInterval(count);
+        document.getElementById("sphe").innerHTML = "happy New Year";
+    }
+}, 1000);
