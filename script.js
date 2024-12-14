@@ -1,0 +1,33 @@
+body {
+    background-image: url(image\background_of_happy_new_year.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: whitesmoke;
+    height: 100vh;
+    justify-content: center;
+    text-align: center;
+}
+
+h1 {
+    font-size: 50px;
+    word-spacing: 100px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h2 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 60px;
+}
+
+.contaneir {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 5%;
+}
+
+span {
+    word-spacing: 140px;
+    margin-left: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
